@@ -2,7 +2,10 @@
 %%%%    Notes                                                               %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% 1    None in particular.
+%% 1    Write people's names in katakana, Japanese names in kanji.
+
+%% 2    Don't use \qty of siunitx, use \SI.
+%% 2    \qty of physics package can be used as usual.
 
 
 
@@ -17,11 +20,16 @@
 \usepackage{comment}
 \usepackage{framed}
 \usepackage{graphicx}
-\usepackage[colorlinks = true, linkcolor = blue, urlcolor = blue]{hyperref}
-\usepackage{newtxtext, newtxmath}
-\usepackage{physics}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
 \usepackage{pxjahyper}
-\usepackage{type1cm}
+
+%%  Resolve \qty conflict between siunitx and physics package
+\usepackage{siunitx}
+\usepackage{physics}
+
+%%  Use Times New Roman
+%%  \usepackage{newtxtext, newtxmath}
+%%  \usepackage{type1cm}
 
 
 
@@ -33,9 +41,10 @@
 %%  Format of enumerate environment
 \renewcommand{\labelenumi}{(\arabic{enumi})}
 
-%%  Numbering of figure and table
-\counterwithin{figure}{subsection}
-\counterwithin{table}{subsection}
+%%  Numbering
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\numberwithin{equation}{section}
 
 %%  Format of footnote
 \renewcommand{\thefootnote}{*\arabic{footnote}}
@@ -47,7 +56,11 @@
 %%%%    Other Commands                                                      %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%  None in particular.
+%% Reference between parenthesis
+\newcommand{\refpr}[1]{(\ref{#1})}
+
+%%  Constant
+\newcommand{\const}{\mathrm{const.}}
 
 
 

@@ -1,0 +1,26 @@
+\documentclass[dvipdfmx]{jsarticle}
+\input{preamble_physicsnote.tex}
+\pagestyle{myheadings}
+\title{physicsnote のテンプレート}
+\author{tar2chicken}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{本文}
+	\subsection{本文}
+		本文.
+
+
+\section{付録}
+	\subsection{付録}
+		付録.
+		\addcontentsline{toc}{section}{参考文献}
+		\begin{thebibliography}{9}
+			\bibitem{author} 著者 ( 著 ), 訳者 ( 訳 ), 『本の名前』 ( シリーズ ), 出版社, 出版年.
+		\end{thebibliography}
+
+
+\end{document}

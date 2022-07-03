@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    Notes                                                               %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 1    Write people's names in katakana, Japanese names in kanji.
+
+%% 2    Don't use \qty of siunitx, use \SI.
+%% 2    \qty of physics package can be used as usual.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    Packages and librarys                                               %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+
+%%  Resolve \qty conflict between siunitx and physics package
+\usepackage{siunitx}
+\usepackage{physics}
+
+%%  Use Times New Roman
+%%  \usepackage{newtxtext, newtxmath}
+%%  \usepackage{type1cm}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    Settings of style                                                   %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  Format of enumerate environment
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+
+%%  Numbering
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\numberwithin{equation}{section}
+
+%%  Format of footnote
+\renewcommand{\thefootnote}{*\arabic{footnote}}
+
+%%  Theorem environment
+\theoremstyle{definition}
+\newtheorem{axm}{公理}
+\newtheorem{define}{定義}
+\newtheorem{mathdefine}{数学の定義}
+\newtheorem{prop}{命題}
+\newenvironment{axiom}{\begin{tcolorbox}[sharp corners, colback=blue!10, colframe=white, breakable=true]\begin{axm}}{\end{axm}\end{tcolorbox}}
+\newenvironment{definition}{\begin{tcolorbox}[sharp corners, colback=blue!10, colframe=white, breakable=true]\begin{define}}{\end{define}\end{tcolorbox}}
+\newenvironment{mathdefinition}{\begin{tcolorbox}[sharp corners, colback=blue!10, colframe=white, breakable=true]\begin{mathdefine}}{\end{mathdefine}\end{tcolorbox}}
+\newenvironment{proposition}{\begin{tcolorbox}[sharp corners, colback=red!10, colframe=white, breakable=true]\begin{prop}}{\end{prop}\end{tcolorbox}}
+
+%%  Proof environment
+\renewcommand{\proofname}{\textgt{証明}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    Other Commands                                                      %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Reference between parenthesis
+\newcommand{\refpr}[1]{(\ref{#1})}
+
+%%  Constant
+\newcommand{\const}{\mathrm{const.}}
+
+
+
